@@ -1,125 +1,93 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Gia Đình Tony</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
 body{
 margin:0;
 font-family:'Inter',sans-serif;
-background:#f6f6f6;
+background:#f5f5f5;
 color:#333;
 text-align:center;
 }
 
-/* HERO */
-
-.hero{
-background:url("images/hero.jpg") center 35%/cover no-repeat;
-height:70vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-color:white;
-padding:20px;
-position:relative;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.25);
-}
-
-.hero h1{
-position:relative;
+h1,h2{
 font-family:'Playfair Display',serif;
-font-size:52px;
-margin:0;
 letter-spacing:1px;
 }
 
-.hero p{
-position:relative;
-font-size:20px;
-margin-top:10px;
-opacity:0.95;
+.hero{
+background:url("images/hero.jpg") center 35%/cover no-repeat;
+height:65vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+color:white;
+padding:20px;
 }
 
-/* SECTION */
+.hero h1{
+font-size:46px;
+margin:0;
+}
+
+.hero p{
+font-size:18px;
+opacity:0.9;
+margin-top:10px;
+}
 
 .section{
-padding:60px 20px;
+padding:50px 20px;
 max-width:900px;
 margin:auto;
 }
 
 .section h2{
-font-family:'Playfair Display',serif;
-font-size:32px;
+font-size:28px;
 margin-bottom:20px;
 }
 
-/* GALLERY */
-
 .gallery{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:12px;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:14px;
 }
 
 .gallery img{
 width:100%;
+aspect-ratio:4/5;
+object-fit:cover;
 border-radius:12px;
 }
 
-/* SOCIAL */
-
 .social{
-margin-top:20px;
+margin-top:30px;
 }
 
 .social a{
 display:inline-block;
-margin:8px;
-padding:12px 20px;
+margin:10px;
+padding:12px 22px;
 background:black;
 color:white;
 border-radius:8px;
 text-decoration:none;
 font-size:15px;
-transition:0.2s;
 }
-
-.social a:hover{
-background:#333;
-}
-
-/* QUOTE */
 
 .quote{
 font-style:italic;
-margin-top:35px;
+margin-top:40px;
 color:#666;
-max-width:500px;
-margin-left:auto;
-margin-right:auto;
+line-height:1.6;
 }
-
-/* FOOTER */
 
 .footer{
 padding:30px;
@@ -127,32 +95,9 @@ font-size:14px;
 color:#999;
 }
 
-/* MOBILE */
-
-@media(max-width:600px){
-
-.hero{
-height:60vh;
-}
-
-.hero h1{
-font-size:36px;
-}
-
-.hero p{
-font-size:16px;
-}
-
-.section{
-padding:40px 20px;
-}
-
-}
-
 </style>
 
 </head>
-
 
 <body>
 
@@ -160,10 +105,9 @@ padding:40px 20px;
 
 <h1>Gia Đình Tony</h1>
 
-<p>Lưu giữ những chuyến đi trước khi thời gian trôi qua</p>
+<p>Lưu giữ những chuyến đi trước khi thời gian trôi qua.</p>
 
 </div>
-
 
 <div class="section">
 
@@ -171,11 +115,11 @@ padding:40px 20px;
 
 <p>
 Một gia đình nhỏ, một cậu bé tên Tony, và hai người bạn bốn chân Na & Lu.  
-Chúng tôi đi, trekking, khám phá, và lưu lại những khoảnh khắc trước khi chúng trở thành ký ức.
+Chúng tôi đi trekking, khám phá những vùng đất mới,  
+và lưu lại những khoảnh khắc trước khi chúng trở thành ký ức.
 </p>
 
 </div>
-
 
 <div class="section">
 
@@ -183,18 +127,17 @@ Chúng tôi đi, trekking, khám phá, và lưu lại những khoảnh khắc tr
 
 <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+<img src="images/photo1.jpg">
 
-<img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429">
+<img src="images/photo2.jpg">
 
-<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e">
+<img src="images/photo3.jpg">
 
-<img src="https://images.unsplash.com/photo-1493244040629-496f6d136cc3">
-
-</div>
+<img src="images/photo4.jpg">
 
 </div>
 
+</div>
 
 <div class="section">
 
@@ -216,7 +159,6 @@ allowfullscreen="true">
 
 </div>
 
-
 <div class="section social">
 
 <a href="#">Facebook</a>
@@ -226,14 +168,13 @@ allowfullscreen="true">
 
 <div class="quote">
 
-"Rồi sẽ có một ngày chúng ta nhận ra  
-những khoảnh khắc bình thường  
+"Rồi sẽ có một ngày chúng ta nhận ra<br>
+những khoảnh khắc bình thường<br>
 chính là những ký ức đẹp nhất."
 
 </div>
 
 </div>
-
 
 <div class="footer">
 
@@ -242,5 +183,4 @@ giadinhtony.com
 </div>
 
 </body>
-
 </html>
