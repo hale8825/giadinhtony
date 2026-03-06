@@ -1,127 +1,175 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gia Đình Tony</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Gia Đình Tony</title>
 
 <style>
 
 body{
 margin:0;
-font-family:'Inter',system-ui;
-background:#f5f5f5;
-color:#333;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4f4f4;
 text-align:center;
 }
 
-h1,h2{
-font-family:'Playfair Display',serif;
-}
+/* HEADER */
 
-.hero{
-background:url("images/hero.jpg") center 30%/cover no-repeat;
-height:60vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
+header{
+background:black;
 color:white;
-padding:20px;
+padding:40px 20px;
 }
 
-.hero h1{
-font-size:42px;
+header h1{
 margin:0;
+font-size:36px;
+letter-spacing:1px;
 }
 
-.hero p{
-font-size:18px;
-opacity:0.9;
+header p{
+margin-top:10px;
+opacity:0.8;
 }
 
-.section{
-padding:50px 20px;
-max-width:900px;
-margin:auto;
-}
+/* GALLERY */
 
 .gallery{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:12px;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+
+max-width:1000px;
+margin:50px auto;
+padding:0 20px;
+
 }
 
 .gallery img{
+
 width:100%;
 border-radius:12px;
 cursor:pointer;
-transition:transform .4s;
+
+transition:0.35s;
+
 }
 
 .gallery img:hover{
-transform:scale(1.05);
+
+transform:scale(1.07);
+
+box-shadow:0 12px 30px rgba(0,0,0,0.3);
+
 }
 
-.fb-box{
-max-width:500px;
-margin:auto;
-width:100%;
-}
-
-.fb-box iframe{
-width:100%;
-border:none;
-overflow:hidden;
-}
-
-.social{
-margin-top:30px;
-}
-
-.social a{
-display:inline-block;
-margin:10px;
-padding:12px 20px;
-background:black;
-color:white;
-border-radius:8px;
-text-decoration:none;
-}
-
-.quote{
-font-style:italic;
-margin-top:30px;
-color:#666;
-}
-
-.footer{
-padding:30px;
-font-size:14px;
-color:#999;
-}
-
-/* Lightbox */
+/* LIGHTBOX */
 
 .lightbox{
-display:none;
+
 position:fixed;
 top:0;
 left:0;
+
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.9);
+
+background:rgba(0,0,0,0.85);
+
+display:none;
+
 justify-content:center;
 align-items:center;
+
 z-index:999;
+
 }
 
 .lightbox img{
+
 max-width:90%;
 max-height:90%;
+
 border-radius:10px;
+
+}
+
+/* FACEBOOK */
+
+.facebook{
+
+margin:60px 0;
+
+display:flex;
+justify-content:center;
+
+padding:0 10px;
+
+}
+
+/* SOCIAL */
+
+.social{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:18px;
+
+max-width:380px;
+
+margin:40px auto 80px;
+
+}
+
+.social a{
+
+background:black;
+color:white;
+
+padding:18px;
+
+text-decoration:none;
+
+border-radius:12px;
+
+font-size:18px;
+
+transition:0.25s;
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+
+}
+
+.social a:hover{
+
+background:#444;
+
+transform:translateY(-3px);
+
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+header h1{
+font-size:28px;
+}
+
+.gallery{
+gap:14px;
+}
+
 }
 
 </style>
@@ -130,104 +178,89 @@ border-radius:10px;
 
 <body>
 
-<div class="hero">
+<header>
 
 <h1>Gia Đình Tony</h1>
 
-<p>Lưu giữ những chuyến đi trước khi thời gian trôi qua.</p>
+<p>Lưu giữ những chuyến đi và khoảnh khắc</p>
 
-</div>
+</header>
 
-<div class="section">
-
-<h2>Câu chuyện</h2>
-
-<p>
-Một gia đình nhỏ, một cậu bé tên Tony, và hai người bạn bốn chân Na & Lu.  
-Chúng tôi đi trekking, khám phá, và lưu lại những khoảnh khắc trước khi chúng trở thành ký ức.
-</p>
-
-</div>
-
-<div class="section">
-
-<h2>Khoảnh khắc</h2>
 
 <div class="gallery">
 
-<img src="images/Trek1.jpg" onclick="openImg(this.src)">
-<img src="images/Trek2.jpg" onclick="openImg(this.src)">
-<img src="images/Trek3.jpg" onclick="openImg(this.src)">
-<img src="images/Trek4.jpg" onclick="openImg(this.src)">
-<img src="images/Trek5.jpg" onclick="openImg(this.src)">
-<img src="images/Trek6.jpg" onclick="openImg(this.src)">
-<img src="images/Trek7.jpg" onclick="openImg(this.src)">
-<img src="images/Trek8.jpg" onclick="openImg(this.src)">
+<img src="Trek1.jpg" onclick="openImg(this)">
+<img src="Trek2.jpg" onclick="openImg(this)">
+<img src="Trek3.jpg" onclick="openImg(this)">
+<img src="Trek4.jpg" onclick="openImg(this)">
+<img src="Trek5.jpg" onclick="openImg(this)">
+<img src="Trek6.jpg" onclick="openImg(this)">
+<img src="Trek7.jpg" onclick="openImg(this)">
+<img src="Trek8.jpg" onclick="openImg(this)">
 
 </div>
 
-</div>
 
-<div class="section">
-
-<h2>Bài viết mới</h2>
-
-<div class="fb-box">
+<div class="facebook">
 
 <iframe
+
 src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/giadinhtonyvo&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+
+width="500"
 height="600"
+
+style="border:none;overflow:hidden"
+
 scrolling="no"
+
 frameborder="0"
+
 allowfullscreen="true">
+
 </iframe>
 
 </div>
 
-</div>
 
-<div class="section social">
+<div class="social">
 
-<a href="#">Facebook</a>
-<a href="#">YouTube</a>
-<a href="#">TikTok</a>
-<a href="#">Instagram</a>
+<a href="https://facebook.com/giadinhTony">📘 Facebook</a>
 
-<div class="quote">
+<a href="#">▶️ YouTube</a>
 
-"Rồi sẽ có một ngày chúng ta nhận ra  
-những khoảnh khắc bình thường  
-chính là những ký ức đẹp nhất."
+<a href="#">🎵 TikTok</a>
+
+<a href="#">📷 Instagram</a>
 
 </div>
 
-</div>
-
-<div class="footer">
-
-giadinhtony.com
-
-</div>
 
 <div class="lightbox" id="lightbox" onclick="closeImg()">
+
 <img id="lightbox-img">
+
 </div>
+
 
 <script>
 
-function openImg(src){
+function openImg(img){
+
 document.getElementById("lightbox").style.display="flex";
-document.getElementById("lightbox-img").src=src;
+
+document.getElementById("lightbox-img").src=img.src;
+
 }
 
 function closeImg(){
+
 document.getElementById("lightbox").style.display="none";
+
 }
 
 </script>
 
+
 </body>
-
 </html>
-
-
