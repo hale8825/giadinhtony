@@ -1,136 +1,323 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Gia Đình Tony</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
-body{
+*{
 margin:0;
-font-family:Arial, sans-serif;
-background:#f5f5f5;
-color:#333;
+padding:0;
+box-sizing:border-box;
 }
 
+body{
+
+font-family:'Poppins',sans-serif;
+background:#fafafa;
+color:#333;
+
+}
+
+/* HERO */
+
 .hero{
-height:90vh;
-background:url("images/banner.jpg") center/cover no-repeat;
+
+height:100vh;
+
+background:
+linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
+url("images/banner.jpg");
+
+background-size:cover;
+background-position:center;
+
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-color:white;
+
 text-align:center;
-background-blend-mode:darken;
-background-color:rgba(0,0,0,0.35);
+color:white;
+
+padding:20px;
+
 }
 
 .hero h1{
-font-size:60px;
-margin:0;
+
+font-family:'Playfair Display',serif;
+
+font-size:80px;
+
+letter-spacing:3px;
+
 }
 
 .hero p{
-font-size:20px;
-max-width:600px;
-}
 
-.buttons{
 margin-top:25px;
+
+max-width:700px;
+
+font-size:20px;
+
+line-height:1.7;
+
 }
 
-.buttons a{
-text-decoration:none;
-background:white;
-color:#333;
-padding:12px 20px;
-margin:5px;
-border-radius:6px;
-font-weight:bold;
+.hero-buttons{
+
+margin-top:40px;
+
 }
+
+.hero-buttons a{
+
+display:inline-block;
+
+margin:8px;
+
+padding:14px 30px;
+
+border-radius:40px;
+
+text-decoration:none;
+
+background:white;
+
+color:#222;
+
+font-weight:500;
+
+transition:0.3s;
+
+}
+
+.hero-buttons a:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+
+}
+
+/* SECTION */
 
 .section{
-padding:60px 20px;
-max-width:1000px;
+
+max-width:1100px;
+
 margin:auto;
+
+padding:90px 20px;
+
 text-align:center;
+
 }
 
+.section h2{
+
+font-family:'Playfair Display',serif;
+
+font-size:42px;
+
+margin-bottom:20px;
+
+}
+
+.section p{
+
+max-width:700px;
+
+margin:auto;
+
+line-height:1.7;
+
+font-size:17px;
+
+}
+
+/* GALLERY */
+
 .gallery{
+
+margin-top:60px;
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:15px;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:20px;
+
 }
 
 .gallery img{
+
 width:100%;
-border-radius:8px;
+
+border-radius:12px;
+
+transition:0.4s;
+
 }
 
-.footer{
-padding:30px;
-text-align:center;
-background:#222;
+.gallery img:hover{
+
+transform:scale(1.05);
+
+}
+
+/* QUOTE */
+
+.quote{
+
+background:#111;
+
 color:white;
+
+padding:100px 30px;
+
+text-align:center;
+
+}
+
+.quote p{
+
+font-size:26px;
+
+max-width:800px;
+
+margin:auto;
+
+line-height:1.6;
+
+}
+
+/* FOOTER */
+
+.footer{
+
+background:#000;
+
+color:#bbb;
+
+padding:40px;
+
+text-align:center;
+
+font-size:14px;
+
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="hero">
+
+<!-- HERO -->
+
+<section class="hero">
 
 <h1>Gia Đình Tony</h1>
 
 <p>
+
 Thời gian trôi rất nhanh.  
 Chúng ta thường bận rộn với cơm áo gạo tiền  
-mà quên lưu lại những khoảnh khắc đáng nhớ.
+đến khi dừng lại mới nhận ra  
+những khoảnh khắc quý giá đã trôi qua.
+
+Trang web này chỉ để lưu lại  
+những chuyến đi và những ký ức của gia đình.
+
 </p>
 
-<div class="buttons">
+<div class="hero-buttons">
+
 <a href="https://facebook.com/giadinhtonyvo">Facebook</a>
+
 <a href="#">YouTube</a>
+
 <a href="#">Instagram</a>
-</div>
 
 </div>
 
-<div class="section">
+</section>
 
-<h2>Chúng tôi là ai</h2>
 
-<p>
-Gia Đình Tony là nơi lưu lại những chuyến đi,  
-những cung trek và những ký ức nhỏ của gia đình.
-</p>
+<!-- ABOUT -->
 
-</div>
-
-<div class="section">
+<section class="section">
 
 <h2>Những chuyến đi</h2>
+
+<p>
+
+Gia Đình Tony thích những chuyến đi dài,  
+những cung trek trong rừng,  
+và những buổi tối cắm trại giữa thiên nhiên.
+
+Không phải để check-in,  
+chỉ để giữ lại những ký ức thật.
+
+</p>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="section">
+
+<h2>Khoảnh khắc</h2>
 
 <div class="gallery">
 
 <img src="images/pic01.jpg">
+
 <img src="images/pic02.jpg">
+
 <img src="images/pic03.jpg">
+
 <img src="images/pic04.jpg">
 
 </div>
 
-</div>
+</section>
+
+
+<!-- QUOTE -->
+
+<section class="quote">
+
+<p>
+
+“Rồi một ngày khi nhìn lại,  
+thứ đáng giá nhất không phải là tiền bạc,  
+mà là những ký ức đã từng có.”
+
+</p>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <div class="footer">
 
-Gia Đình Tony © 2026
+© 2026 Gia Đình Tony
 
 </div>
+
 
 </body>
 </html>
