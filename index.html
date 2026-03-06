@@ -1,145 +1,50 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gia Đình Tony</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;}
-
 body{
-font-family:'Poppins',sans-serif;
-background:#fafafa;
+margin:0;
+font-family:system-ui;
+background:#f5f5f5;
 color:#333;
-line-height:1.6;
+text-align:center;
 }
-
-/* NAV */
-
-.nav{
-position:fixed;
-top:0;
-width:100%;
-padding:14px 20px;
-display:flex;
-justify-content:space-between;
-background:rgba(0,0,0,0.6);
-color:white;
-z-index:100;
-}
-
-.nav a{
-color:white;
-text-decoration:none;
-margin-left:15px;
-font-size:14px;
-}
-
-/* HERO */
 
 .hero{
-height:100vh;
-
-background:
-linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
-url("images/banner.jpg");
-
-background-size:cover;
-background-position:center;
-
+background:url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee") center/cover;
+height:60vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
-align-items:center;
-
-text-align:center;
 color:white;
 padding:20px;
 }
 
 .hero h1{
-font-family:'Playfair Display',serif;
-font-size:54px;
+font-size:42px;
+margin:0;
 }
 
 .hero p{
-margin-top:20px;
-max-width:650px;
-font-size:17px;
+font-size:18px;
+opacity:0.9;
 }
-
-.hero-buttons{
-margin-top:30px;
-}
-
-.hero-buttons a{
-display:inline-block;
-margin:8px;
-padding:12px 22px;
-border-radius:30px;
-text-decoration:none;
-background:white;
-color:#222;
-font-size:14px;
-}
-
-/* SECTION */
 
 .section{
-max-width:1100px;
+padding:40px 20px;
+max-width:900px;
 margin:auto;
-padding:80px 20px;
-text-align:center;
 }
-
-.section h2{
-font-family:'Playfair Display',serif;
-font-size:34px;
-margin-bottom:15px;
-}
-
-/* JOURNEY */
-
-.timeline{
-margin-top:40px;
-max-width:600px;
-margin-left:auto;
-margin-right:auto;
-text-align:left;
-}
-
-.timeline div{
-border-left:3px solid #ddd;
-padding:15px;
-margin-bottom:15px;
-}
-
-/* MAP */
-
-.map{
-margin-top:40px;
-}
-
-.map iframe{
-width:100%;
-height:350px;
-border-radius:10px;
-}
-
-/* GALLERY */
 
 .gallery{
-margin-top:40px;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:12px;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:10px;
 }
 
 .gallery img{
@@ -147,51 +52,30 @@ width:100%;
 border-radius:10px;
 }
 
-/* VIDEO */
-
-.video iframe{
-width:100%;
-max-width:800px;
-height:420px;
-border-radius:10px;
+.social{
 margin-top:30px;
 }
 
-/* QUOTE */
+.social a{
+display:inline-block;
+margin:10px;
+padding:12px 20px;
+background:black;
+color:white;
+border-radius:8px;
+text-decoration:none;
+}
 
 .quote{
-background:#111;
-color:white;
-padding:90px 20px;
-text-align:center;
+font-style:italic;
+margin-top:30px;
+color:#666;
 }
-
-.quote p{
-font-size:22px;
-max-width:700px;
-margin:auto;
-}
-
-/* FOOTER */
 
 .footer{
-background:#000;
-color:#aaa;
-padding:35px;
-text-align:center;
-font-size:13px;
-}
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-.hero h1{font-size:38px;}
-
-.hero p{font-size:15px;}
-
-.video iframe{height:230px;}
-
+padding:30px;
+font-size:14px;
+color:#999;
 }
 
 </style>
@@ -200,145 +84,89 @@ font-size:13px;
 
 <body>
 
-<!-- NAV -->
-
-<div class="nav">
-
-<div>Gia Đình Tony</div>
-
-<div>
-<a href="#">Home</a>
-<a href="#">Journey</a>
-<a href="https://facebook.com/giadinhtonyvo">Facebook</a>
-</div>
-
-</div>
-
-<!-- HERO -->
-
-<section class="hero">
+<div class="hero">
 
 <h1>Gia Đình Tony</h1>
 
-<p>
-
-Thời gian trôi rất nhanh.  
-Đến khi dừng lại nhìn lại,  
-thứ còn lại chỉ là những ký ức.
-
-</p>
-
-<div class="hero-buttons">
-
-<a href="https://facebook.com/giadinhtonyvo">Facebook</a>
-
-<a href="#">YouTube</a>
+<p>Lưu giữ những chuyến đi trước khi thời gian trôi qua.</p>
 
 </div>
 
-</section>
+<div class="section">
 
-<!-- JOURNEY -->
-
-<section class="section">
-
-<h2>Hành Trình</h2>
+<h2>Câu chuyện</h2>
 
 <p>
-
-Gia đình Tony thích trekking, cắm trại  
-và những chuyến đi dài.
-
-Không phải để check-in.  
-Chỉ để giữ lại những ký ức thật.
-
+Một gia đình nhỏ, một cậu bé tên Tony, và hai người bạn bốn chân Na & Lu.  
+Chúng tôi đi, trekking, khám phá, và lưu lại những khoảnh khắc trước khi chúng trở thành ký ức.
 </p>
 
-<div class="timeline">
-
-<div>
-<b>2024</b><br>
-Những chuyến trek đầu tiên.
 </div>
 
-<div>
-<b>2025</b><br>
-Khám phá thêm nhiều cung trek tại Việt Nam.
-</div>
+<div class="section">
 
-<div>
-<b>2026</b><br>
-Hành trình xuyên Việt.
-</div>
-
-</div>
-
-</section>
-
-<!-- MAP -->
-
-<section class="section">
-
-<h2>Bản Đồ Hành Trình</h2>
-
-<div class="map">
-
-<iframe src="https://maps.google.com/maps?q=vietnam&t=&z=5&ie=UTF8&iwloc=&output=embed"></iframe>
-
-</div>
-
-</section>
-
-<!-- GALLERY -->
-
-<section class="section">
-
-<h2>Khoảnh Khắc</h2>
+<h2>Khoảnh khắc</h2>
 
 <div class="gallery">
 
-<img src="images/pic01.jpg">
-<img src="images/pic02.jpg">
-<img src="images/pic03.jpg">
-<img src="images/pic04.jpg">
-<img src="images/pic05.jpg">
-<img src="images/pic06.jpg">
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+
+<img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429">
+
+<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e">
+
+<img src="https://images.unsplash.com/photo-1493244040629-496f6d136cc3">
 
 </div>
 
-</section>
+</div>
 
-<!-- VIDEO -->
+<div class="section">
 
-<section class="section video">
+<h2>Bài viết mới</h2>
 
-<h2>Video</h2>
+<div style="max-width:500px;margin:auto;">
 
-<iframe src="https://www.youtube.com/embed/YOUTUBE_ID" frameborder="0" allowfullscreen></iframe>
+<iframe
+src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/giadinhTony&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+width="100%"
+height="600"
+style="border:none;overflow:hidden"
+scrolling="no"
+frameborder="0"
+allowfullscreen="true">
+</iframe>
 
-</section>
+</div>
 
-<!-- QUOTE -->
+</div>
 
-<section class="quote">
+<div class="section social">
 
-<p>
+<a href="#">Facebook</a>
 
-“Rồi một ngày khi nhìn lại,  
-thứ đáng giá nhất không phải tiền bạc,  
-mà là những ký ức đã từng có.”
+<a href="#">YouTube</a>
 
-</p>
+<a href="#">TikTok</a>
 
-</section>
+<a href="#">Instagram</a>
 
-<!-- FOOTER -->
+<div class="quote">
+
+"Rồi sẽ có một ngày chúng ta nhận ra  
+những khoảnh khắc bình thường  
+chính là những ký ức đẹp nhất."
+
+</div>
+
+</div>
 
 <div class="footer">
 
-© 2026 Gia Đình Tony
+giadinhtony.com
 
 </div>
 
 </body>
+
 </html>
