@@ -16,8 +16,8 @@
 
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#f4f4f4;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+background:#f6f6f6;
 color:#333;
 text-align:center;
 }
@@ -25,41 +25,54 @@ text-align:center;
 / HERO /
 
 .hero{
-background:url("images/hero.jpg") center 30%/cover no-repeat;
-background-attachment:fixed;
-min-height:65vh;
-padding:80px 20px;
+position:relative;
+background:url("images/hero.jpg") center/cover no-repeat;
+min-height:60vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+padding:80px 20px;
 color:white;
-text-shadow:0 3px 15px rgba(0,0,0,0.7);
+text-align:center;
+}
+
+/ overlay tối nhẹ /
+
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.35);
+}
+
+.hero h1,
+.hero p{
+position:relative;
+z-index:1;
 }
 
 .hero h1{
-font-size:42px;
+font-size:44px;
 margin:0;
 }
 
 .hero p{
-margin-top:12px;
 font-size:18px;
-max-width:620px;
-}
-
-.hero small{
-margin-top:10px;
-font-size:14px;
-opacity:0.9;
+margin-top:12px;
+max-width:600px;
 }
 
 / INTRO /
 
 .intro{
-max-width:760px;
+max-width:720px;
 margin:70px auto;
 padding:0 20px;
+line-height:1.7;
 }
 
 .intro h2{
@@ -69,21 +82,8 @@ margin-bottom:20px;
 
 .intro p{
 font-size:18px;
-line-height:1.7;
-color:#444;
+color:#555;
 margin-bottom:16px;
-}
-
-/ JOURNEYS /
-
-.journeys h2{
-font-size:28px;
-margin-bottom:8px;
-}
-
-.journeys p{
-color:#666;
-margin-bottom:40px;
 }
 
 / GALLERY /
@@ -97,41 +97,18 @@ margin:60px auto;
 padding:0 20px;
 }
 
-.gallery-item{
-position:relative;
-overflow:hidden;
-}
-
 .gallery img{
 width:100%;
-height:300px;
+height:280px;
 object-fit:cover;
-border-radius:16px;
+border-radius:14px;
 cursor:pointer;
-transition:0.35s;
+transition:0.3s;
 }
 
 .gallery img:hover{
-transform:scale(1.05);
-box-shadow:0 12px 30px rgba(0,0,0,0.25);
-}
-
-.caption{
-position:absolute;
-bottom:0;
-left:0;
-right:0;
-background:linear-gradient(transparent,rgba(0,0,0,0.75));
-color:white;
-font-size:14px;
-padding:40px 10px 10px;
-opacity:0;
-transition:0.3s;
-border-radius:0 0 16px 16px;
-}
-
-.gallery-item:hover .caption{
-opacity:1;
+transform:scale(1.04);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
 / LIGHTBOX /
@@ -142,7 +119,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.92);
+background:rgba(0,0,0,0.9);
 display:none;
 justify-content:center;
 align-items:center;
@@ -184,68 +161,50 @@ border:none;
 / SOCIAL /
 
 .social{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:16px;
-max-width:420px;
-margin:40px auto 80px;
-padding:0 20px;
+display:flex;
+justify-content:center;
+gap:18px;
+margin:50px 0 70px;
+flex-wrap:wrap;
 }
 
 .social a{
-display:flex;
-align-items:center;
-justify-content:center;
-padding:16px;
-border-radius:12px;
-color:white;
+padding:12px 22px;
+border-radius:30px;
 text-decoration:none;
-font-size:17px;
+font-size:15px;
+color:white;
+font-weight:500;
 transition:0.25s;
 }
 
 .social a:hover{
-transform:translateY(-3px);
+transform:translateY(-2px);
+opacity:0.9;
 }
 
 .fb{background:#1877F2}
 .yt{background:#FF0000}
 .tt{background:#000}
-
-.ig{
-background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4)
-}
+.ig{background:#E4405F}
 
 / FOOTER /
 
 footer{
-margin:70px 0;
 font-size:14px;
 color:#777;
+margin-bottom:40px;
 }
 
-/ SCROLL ANIMATION /
-
-.fade{
-opacity:0;
-transform:translateY(30px);
-transition:all 0.8s ease;
-}
-
-.fade.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/ MOBILE /
+/ MOBILE */
 
 @media(max-width:600px){
 
-.hero h1{font-size:28px}
+.hero h1{font-size:32px}
 
 .hero p{font-size:16px}
 
-.gallery img{height:230px}
+.gallery img{height:220px}
 
 }
 
@@ -259,74 +218,40 @@ transform:translateY(0);
 
 <h1>Gia Đình Tony</h1>
 <p>Lưu giữ những chuyến đi trước khi chúng trở thành ký ức</p>
-<small>Family • Trekking • Memories</small>
 
 </div>
 
-<section class="intro fade">
+
+<section class="intro">
 
 <h2>Vì sao có Gia Đình Tony</h2>
 
-<p>Thời gian trôi rất nhanh và chúng ta thường bị cuốn vào công việc và cuộc sống mỗi ngày.</p>
+<p>
+Thời gian trôi rất nhanh và chúng ta thường bị cuốn vào công việc và cuộc sống mỗi ngày.
+</p>
 
-<p>Đến khi dừng lại nhìn lại, nhiều khoảnh khắc đẹp đã trôi qua mà không kịp lưu giữ.</p>
-
-<p>Trang này được tạo ra để lưu lại những chuyến đi, hành trình trekking và những ký ức nhỏ của gia đình trước khi chúng trở thành kỷ niệm.</p>
-
-</section>
-
-<section class="journeys fade">
-
-<h2>Những chuyến đi</h2>
-<p>Mỗi chuyến đi là một câu chuyện nhỏ của gia đình Tony.</p>
+<p>
+Trang này được tạo ra để lưu lại những chuyến đi, những hành trình trekking và những ký ức nhỏ của gia đình trước khi chúng trở thành kỷ niệm.
+</p>
 
 </section>
 
-<div class="gallery fade">
 
-<div class="gallery-item">
+<div class="gallery">
+
 <img src="images/Trek1.jpg" loading="lazy" onclick="openImg(0)">
-<div class="caption">Bidoup – Langbiang</div>
-</div>
-
-<div class="gallery-item">
 <img src="images/Trek2.jpg" loading="lazy" onclick="openImg(1)">
-<div class="caption">Tà Năng – Phan Dũng</div>
-</div>
-
-<div class="gallery-item">
 <img src="images/Trek3.jpg" loading="lazy" onclick="openImg(2)">
-<div class="caption">Langbiang</div>
-</div>
-
-<div class="gallery-item">
 <img src="images/Trek4.jpg" loading="lazy" onclick="openImg(3)">
-<div class="caption">Bidoup Forest</div>
-</div>
-
-<div class="gallery-item">
 <img src="images/Trek5.jpg" loading="lazy" onclick="openImg(4)">
-<div class="caption">Đỉnh núi</div>
-</div>
-
-<div class="gallery-item">
 <img src="images/Trek6.jpg" loading="lazy" onclick="openImg(5)">
-<div class="caption">Rừng nguyên sinh</div>
-</div>
-
-<div class="gallery-item">
 <img src="images/Trek7.jpg" loading="lazy" onclick="openImg(6)">
-<div class="caption">Camping</div>
-</div>
-
-<div class="gallery-item">
 <img src="images/Trek8.jpg" loading="lazy" onclick="openImg(7)">
-<div class="caption">Hành trình</div>
-</div>
 
 </div>
 
-<div class="facebook fade">
+
+<div class="facebook">
 
 <iframe
 src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/giadinhtonyvo&tabs=timeline&height=600&adapt_container_width=true"
@@ -338,17 +263,16 @@ allowfullscreen="true">
 
 </div>
 
-<div class="social fade">
+
+<div class="social">
 
 <a class="fb" href="https://facebook.com/giadinhtonyvo" target="_blank">Facebook</a>
-
 <a class="yt" href="https://youtube.com/@giadinhtonyvo" target="_blank">YouTube</a>
-
 <a class="tt" href="https://tiktok.com/@giadinhtonyofficial" target="_blank">TikTok</a>
-
 <a class="ig" href="https://instagram.com/giadinhtony" target="_blank">Instagram</a>
 
 </div>
+
 
 <footer>
 
@@ -357,6 +281,7 @@ allowfullscreen="true">
 
 </footer>
 
+
 <div class="lightbox" id="lightbox">
 
 <span class="nav prev" onclick="prev()">❮</span>
@@ -364,6 +289,7 @@ allowfullscreen="true">
 <span class="nav next" onclick="next()">❯</span>
 
 </div>
+
 
 <script>
 
@@ -393,30 +319,6 @@ index--
 if(index<0){index=imgs.length-1}
 document.getElementById("lightbox-img").src=imgs[index].src
 }
-
-/ SCROLL FADE */
-
-let faders=document.querySelectorAll(".fade")
-
-function reveal(){
-
-let windowHeight=window.innerHeight
-
-faders.forEach(el=>{
-
-let top=el.getBoundingClientRect().top
-
-if(top < windowHeight-100){
-el.classList.add("show")
-}
-
-})
-
-}
-
-window.addEventListener("scroll",reveal)
-
-reveal()
 
 </script>
 
