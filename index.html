@@ -8,7 +8,7 @@
 
 <title>Gia Đình Tony</title>
 
-<meta name="description" content="Gia Đình Tony - lưu giữ những chuyến đi, hành trình trekking và ký ức gia đình.">
+<meta name="description" content="Gia Đình Tony - lưu giữ những chuyến đi và ký ức gia đình">
 
 <style>
 
@@ -35,7 +35,7 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 color:white;
-text-shadow:0 2px 10px rgba(0,0,0,0.7);
+text-shadow:0 3px 15px rgba(0,0,0,0.7);
 }
 
 .hero h1{
@@ -44,113 +44,110 @@ margin:0;
 }
 
 .hero p{
-margin-top:10px;
+margin-top:12px;
 font-size:18px;
-max-width:600px;
+max-width:620px;
 }
 
 /* GALLERY */
 
 .gallery{
-
-column-count:3;
-column-gap:18px;
-
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 max-width:1100px;
 margin:60px auto;
 padding:0 20px;
-
 }
 
 .gallery img{
-
 width:100%;
-margin-bottom:18px;
+height:300px;
+object-fit:cover;
 border-radius:16px;
 cursor:pointer;
 transition:0.35s;
-
 }
 
 .gallery img:hover{
-
-transform:scale(1.04);
-box-shadow:0 15px 35px rgba(0,0,0,0.25);
-
+transform:scale(1.05);
+box-shadow:0 12px 30px rgba(0,0,0,0.25);
 }
 
 /* LIGHTBOX */
 
 .lightbox{
-
 position:fixed;
 top:0;
 left:0;
-
 width:100%;
 height:100%;
-
 background:rgba(0,0,0,0.92);
-
 display:none;
-
 justify-content:center;
 align-items:center;
-
 z-index:999;
-
 }
 
 .lightbox img{
-
-max-width:90%;
-max-height:90%;
+max-width:92%;
+max-height:92%;
 border-radius:10px;
+}
 
+.nav{
+position:absolute;
+top:50%;
+font-size:40px;
+color:white;
+cursor:pointer;
+padding:20px;
+user-select:none;
+}
+
+.prev{
+left:10px;
+}
+
+.next{
+right:10px;
 }
 
 /* FACEBOOK */
 
 .facebook{
-
 max-width:500px;
 margin:60px auto;
 padding:0 10px;
-
 }
 
 .facebook iframe{
 width:100%;
+border:none;
 }
 
 /* SOCIAL */
 
 .social{
-
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:18px;
-
+gap:16px;
 max-width:420px;
 margin:40px auto 80px;
-
+padding:0 20px;
 }
 
 .social a{
-
-color:white;
-padding:18px;
-text-decoration:none;
-border-radius:12px;
-font-size:18px;
-
 display:flex;
 align-items:center;
 justify-content:center;
 gap:10px;
-
+padding:16px;
+border-radius:12px;
+color:white;
+text-decoration:none;
+font-size:17px;
 transition:0.25s;
-
 }
 
 .social a:hover{
@@ -159,37 +156,20 @@ transform:translateY(-3px);
 
 /* BRAND COLORS */
 
-.facebook-btn{
-background:#1877F2;
+.fb{background:#1877F2;}
+.yt{background:#FF0000;}
+.tt{background:#000;}
+.ig{
+background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
 }
 
-.youtube-btn{
-background:#FF0000;
-}
-
-.tiktok-btn{
-background:#000;
-}
-
-.instagram-btn{
-
-background:linear-gradient(
-45deg,
-#f58529,
-#dd2a7b,
-#8134af,
-#515bd4
-);
-
+.social svg{
+width:20px;
+height:20px;
+fill:white;
 }
 
 /* MOBILE */
-
-@media(max-width:900px){
-.gallery{
-column-count:2;
-}
-}
 
 @media(max-width:600px){
 
@@ -201,8 +181,8 @@ font-size:28px;
 font-size:16px;
 }
 
-.gallery{
-column-count:1;
+.gallery img{
+height:230px;
 }
 
 }
@@ -213,11 +193,9 @@ column-count:1;
 
 <body>
 
-
 <div class="hero">
 
 <h1>Gia Đình Tony</h1>
-
 <p>Lưu giữ những chuyến đi trước khi chúng trở thành ký ức</p>
 
 </div>
@@ -225,14 +203,14 @@ column-count:1;
 
 <div class="gallery">
 
-<img src="images/Trek1.jpg" loading="lazy" alt="Gia dinh Tony trek 1" onclick="openImg(0)">
-<img src="images/Trek2.jpg" loading="lazy" alt="Gia dinh Tony trek 2" onclick="openImg(1)">
-<img src="images/Trek3.jpg" loading="lazy" alt="Gia dinh Tony trek 3" onclick="openImg(2)">
-<img src="images/Trek4.jpg" loading="lazy" alt="Gia dinh Tony trek 4" onclick="openImg(3)">
-<img src="images/Trek5.jpg" loading="lazy" alt="Gia dinh Tony trek 5" onclick="openImg(4)">
-<img src="images/Trek6.jpg" loading="lazy" alt="Gia dinh Tony trek 6" onclick="openImg(5)">
-<img src="images/Trek7.jpg" loading="lazy" alt="Gia dinh Tony trek 7" onclick="openImg(6)">
-<img src="images/Trek8.jpg" loading="lazy" alt="Gia dinh Tony trek 8" onclick="openImg(7)">
+<img src="images/Trek1.jpg" loading="lazy" onclick="openImg(0)">
+<img src="images/Trek2.jpg" loading="lazy" onclick="openImg(1)">
+<img src="images/Trek3.jpg" loading="lazy" onclick="openImg(2)">
+<img src="images/Trek4.jpg" loading="lazy" onclick="openImg(3)">
+<img src="images/Trek5.jpg" loading="lazy" onclick="openImg(4)">
+<img src="images/Trek6.jpg" loading="lazy" onclick="openImg(5)">
+<img src="images/Trek7.jpg" loading="lazy" onclick="openImg(6)">
+<img src="images/Trek8.jpg" loading="lazy" onclick="openImg(7)">
 
 </div>
 
@@ -240,19 +218,11 @@ column-count:1;
 <div class="facebook">
 
 <iframe
-
-src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/giadinhtonyvo&tabs=timeline&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
-
+src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/giadinhtonyvo&tabs=timeline&height=600&adapt_container_width=true"
 height="600"
-
-style="border:none;overflow:hidden"
-
 scrolling="no"
-
 frameborder="0"
-
 allowfullscreen="true">
-
 </iframe>
 
 </div>
@@ -260,51 +230,56 @@ allowfullscreen="true">
 
 <div class="social">
 
-<a class="facebook-btn" href="https://facebook.com/giadinhtonyvo">
+<a class="fb" href="https://facebook.com/giadinhtonyvo" target="_blank">
 
-📘 Facebook
+<svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7v-3h3.4V9.4c0-3.4 2-5.3 5.1-5.3 1.5 0 3 .3 3 .3v3.3h-1.7c-1.7 0-2.2 1-2.2 2.1V12H18l-.5 3h-2.9v7A10 10 0 0022 12z"/></svg>
 
-</a>
-
-<a class="youtube-btn" href="#">
-
-▶️ YouTube
+Facebook
 
 </a>
 
-<a class="tiktok-btn" href="#">
+<a class="yt" href="https://youtube.com/@giadinhtonyvo" target="_blank">
 
-🎵 TikTok
+<svg viewBox="0 0 24 24"><path d="M23.5 6.2s-.2-1.7-.7-2.5c-.6-.9-1.3-.9-1.6-1C18.9 2.4 12 2.4 12 2.4h0s-6.9 0-9.2.3c-.3.1-1 .1-1.6 1C.7 4.5.5 6.2.5 6.2S.3 8.2.3 10.2v1.6c0 2 .2 4 .2 4s.2 1.7.7 2.5c.6.9 1.4.9 1.8 1 1.3.1 5.5.3 9 .3s7.7-.2 9-.3c.4-.1 1.2-.1 1.8-1 .5-.8.7-2.5.7-2.5s.2-2 .2-4v-1.6c0-2-.2-4-.2-4zM9.8 14.6V7.8l6 3.4-6 3.4z"/></svg>
+
+YouTube
 
 </a>
 
-<a class="instagram-btn" href="#">
+<a class="tt" href="https://tiktok.com/@giadinhtonyofficial" target="_blank">
 
-📷 Instagram
+TikTok
+
+</a>
+
+<a class="ig" href="https://instagram.com/giadinhtonyvo" target="_blank">
+
+Instagram
 
 </a>
 
 </div>
 
 
-<div class="lightbox" id="lightbox" onclick="closeImg()">
+<div class="lightbox" id="lightbox">
 
+<span class="nav prev" onclick="prev()">❮</span>
 <img id="lightbox-img">
+<span class="nav next" onclick="next()">❯</span>
 
 </div>
 
 
 <script>
 
-let images=document.querySelectorAll(".gallery img")
+let imgs=document.querySelectorAll(".gallery img")
 let index=0
 
 function openImg(i){
 
 index=i
-
 document.getElementById("lightbox").style.display="flex"
-document.getElementById("lightbox-img").src=images[index].src
+document.getElementById("lightbox-img").src=imgs[index].src
 
 }
 
@@ -314,45 +289,23 @@ document.getElementById("lightbox").style.display="none"
 
 }
 
-/* KEYBOARD */
-
-document.addEventListener("keydown",function(e){
-
-if(e.key==="ArrowRight"){
-next()
-}
-
-if(e.key==="ArrowLeft"){
-prev()
-}
-
-if(e.key==="Escape"){
-closeImg()
-}
-
-})
+document.getElementById("lightbox").onclick=closeImg
 
 function next(){
 
 index++
+if(index>=imgs.length){index=0}
 
-if(index>=images.length){
-index=0
-}
-
-document.getElementById("lightbox-img").src=images[index].src
+document.getElementById("lightbox-img").src=imgs[index].src
 
 }
 
 function prev(){
 
 index--
+if(index<0){index=imgs.length-1}
 
-if(index<0){
-index=images.length-1
-}
-
-document.getElementById("lightbox-img").src=images[index].src
+document.getElementById("lightbox-img").src=imgs[index].src
 
 }
 
