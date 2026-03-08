@@ -40,7 +40,7 @@ line-height:1.6;
 text-align:center;
 }
 
-/ HERO /
+/* HERO */
 
 .hero{
 background:url("images/hero.jpg") center 30%/cover no-repeat;
@@ -64,7 +64,7 @@ font-size:18px;
 opacity:0.95;
 }
 
-/ SECTION /
+/* SECTION */
 
 .section{
 max-width:800px;
@@ -91,7 +91,7 @@ color:#555;
 margin-bottom:15px;
 }
 
-/ QUOTE /
+/* QUOTE */
 
 .quote{
 font-style:italic;
@@ -99,7 +99,7 @@ color:#777;
 font-size:18px;
 }
 
-/ GALLERY /
+/* GALLERY */
 
 .gallery{
 display:grid;
@@ -140,14 +140,14 @@ color:#666;
 margin-top:8px;
 }
 
-/ FACEBOOK /
+/* FACEBOOK */
 
 .fb-feed{
 max-width:500px;
 margin:40px auto;
 }
 
-/ LIGHTBOX /
+/* LIGHTBOX */
 
 .lightbox{
 position:fixed;
@@ -168,7 +168,7 @@ max-height:90%;
 border-radius:10px;
 }
 
-/ SOCIAL /
+/* SOCIAL */
 
 .social{
 display:flex;
@@ -351,7 +351,7 @@ data-adapt-container-width="true">
 
 <script>
 
-/ LIGHTBOX /
+/* LIGHTBOX */
 
 function openImg(img){
 document.getElementById("lightbox").style.display="flex";
@@ -363,14 +363,14 @@ document.getElementById("lightbox").style.display="none";
 }
 
 
-/ IMAGE FADE LOAD /
+/* IMAGE FADE LOAD */
 
 document.querySelectorAll("img").forEach(img=>{
 img.onload=()=>img.classList.add("loaded");
 });
 
 
-/ SCROLL ANIMATION */
+/* SCROLL ANIMATION */
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
