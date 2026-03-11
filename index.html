@@ -14,6 +14,7 @@
 <meta property="og:title" content="Gia Đình Tony">
 <meta property="og:description" content="Lưu giữ những chuyến đi và ký ức của gia đình Tony.">
 <meta property="og:image" content="https://giadinhtony.com/images/hero.jpg">
+<meta property="og:url" content="https://giadinhtony.com">
 <meta property="og:type" content="website">
 
 <link rel="icon" href="images/favicon.png">
@@ -26,10 +27,6 @@
 box-sizing:border-box;
 margin:0;
 padding:0;
-}
-
-html{
-scroll-behavior:smooth;
 }
 
 body{
@@ -51,8 +48,8 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-padding:60px 20px;
 color:white;
+padding:60px 20px;
 text-shadow:0 4px 20px rgba(0,0,0,0.7);
 }
 
@@ -63,35 +60,25 @@ margin-bottom:6px;
 
 .hero p{
 font-size:18px;
-opacity:0.95;
-margin-top:6px;
 }
 
 /* SECTION */
 
 .section{
-max-width:800px;
+max-width:900px;
 margin:auto;
 padding:40px 20px;
-opacity:0;
-transform:translateY(40px);
-transition:all 0.8s ease;
-}
-
-.section.show{
-opacity:1;
-transform:translateY(0);
 }
 
 .section h2{
 font-size:32px;
-margin-bottom:15px;
+margin-bottom:14px;
 }
 
 .section p{
 font-size:18px;
 color:#555;
-margin-bottom:12px;
+margin-bottom:10px;
 }
 
 /* QUOTE */
@@ -100,63 +87,53 @@ margin-bottom:12px;
 font-style:italic;
 color:#777;
 font-size:18px;
-margin-top:10px;
 }
 
-/* GALLERY */
+/* TIMELINE */
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-padding:20px;
-max-width:1100px;
+.timeline{
+max-width:1000px;
 margin:auto;
-}
-
-.photo{
+padding:30px 20px;
 text-align:left;
-overflow:hidden;
-border-radius:12px;
 }
 
-.photo img{
-width:100%;
-height:240px;
-object-fit:cover;
-border-radius:12px;
-cursor:pointer;
-transition:0.4s;
-box-shadow:0 5px 20px rgba(0,0,0,0.15);
-opacity:0;
-transform:scale(0.95);
+.year{
+font-size:28px;
+font-weight:bold;
+margin-top:30px;
+margin-bottom:10px;
 }
 
-.photo img.loaded{
-opacity:1;
-transform:scale(1);
+.event{
+background:white;
+padding:14px 18px;
+border-radius:10px;
+margin-bottom:12px;
+box-shadow:0 3px 12px rgba(0,0,0,0.08);
+transition:0.25s;
 }
 
-.photo img:hover{
-transform:scale(1.05);
-box-shadow:0 12px 35px rgba(0,0,0,0.25);
+.event:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
 
-.photo img.loaded{
-opacity:1;
-transform:scale(1);
+.event a{
+text-decoration:none;
+color:#333;
+display:block;
 }
 
-.photo img:hover{
-transform:scale(1.05);
-box-shadow:0 12px 35px rgba(0,0,0,0.25);
+.event-title{
+font-size:18px;
+font-weight:600;
 }
 
-.caption{
+.event-desc{
 font-size:15px;
-color:#555;
-margin-top:10px;
-line-height:1.5;
+color:#666;
+margin-top:4px;
 }
 
 /* FACEBOOK */
@@ -164,32 +141,6 @@ line-height:1.5;
 .fb-feed{
 max-width:500px;
 margin:40px auto;
-width:100%;
-}
-
-.fb-page{
-width:100% !important;
-}
-
-/* LIGHTBOX */
-
-.lightbox{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.92);
-display:none;
-justify-content:center;
-align-items:center;
-z-index:1000;
-}
-
-.lightbox img{
-max-width:90%;
-max-height:90%;
-border-radius:10px;
 }
 
 /* SOCIAL */
@@ -209,12 +160,6 @@ font-size:14px;
 color:white;
 text-decoration:none;
 font-weight:600;
-transition:0.25s;
-}
-
-.social a:hover{
-transform:translateY(-2px);
-opacity:0.9;
 }
 
 .fb{background:#1877F2;}
@@ -231,15 +176,6 @@ padding:25px;
 /* MOBILE */
 
 @media(max-width:768px){
-.photo img{
-height:auto;
-object-fit:contain;
-}
-.hero{
-min-height:55vh;
-background-position:center 40%;
-padding:40px 20px;
-}
 
 .hero h1{
 font-size:32px;
@@ -249,18 +185,8 @@ font-size:32px;
 font-size:16px;
 }
 
-.section{
-padding:28px 20px;
-}
-
-.gallery{
-grid-template-columns:1fr;
-gap:26px;
-padding:16px;
-}
-
-.caption{
-font-size:16px;
+.timeline{
+padding:20px;
 }
 
 }
@@ -286,11 +212,11 @@ font-size:16px;
 
 <h2>Vì sao có Gia Đình Tony</h2>
 
-<p>Thời gian trôi rất nhanh, chúng ta thường bị cuốn vào công việc và cuộc sống vội vã.</p>
+<p>Thời gian trôi rất nhanh và chúng ta thường bị cuốn vào công việc mỗi ngày.</p>
 
-<p>Đến lúc nhìn lại, nhiều khoảnh khắc đẹp đã trôi qua lặng lẽ mà không kịp lưu giữ.</p>
+<p>Đến lúc nhìn lại, nhiều khoảnh khắc đẹp đã trôi qua mà không kịp lưu giữ.</p>
 
-<p>Trang này được tạo ra để lưu lại những hành trình và thử thách cùng nhau trước khi chúng trở thành ký ức.</p>
+<p>Trang này được tạo ra để ghi lại những chuyến đi và những hành trình của gia đình.</p>
 
 </div>
 
@@ -308,51 +234,43 @@ mà là những chuyến đi đã cùng nhau trải qua."
 
 
 <div class="section">
-<h2>Những chuyến đi</h2>
-<p>Mỗi chuyến đi là một trải nghiệm hoàn toàn khác.</p>
+<h2>Hành trình của Gia Đình Tony</h2>
 </div>
 
 
-<div class="gallery">
+<div class="timeline">
 
-<div class="photo">
-<img src="images/Trek1.jpg" loading="lazy" onclick="openImg(this)">
-<p class="caption">Một chặng trekking cùng Tony, Na và Lu.</p>
+<div class="year">2026</div>
+
+<div class="event">
+<a href="2026-k50.html">
+<div class="event-title">Trek K50</div>
+<div class="event-desc">Hành trình trekking thác K50 cùng Tony, Na và Lu.</div>
+</a>
 </div>
 
-<div class="photo">
-<img src="images/Trek2.jpg" loading="lazy" onclick="openImg(this)">
-<p class="caption">Khoảnh khắc giữa rừng khi cả gia đình cùng nhau vượt dốc.</p>
+<div class="event">
+<a href="2026-longson.html">
+<div class="event-title">Đạp xe Hồ Long Sơn</div>
+<div class="event-desc">Một ngày đạp xe quanh hồ và cắm trại.</div>
+</a>
 </div>
 
-<div class="photo">
-<img src="images/Trek3.jpg" loading="lazy" onclick="openImg(this)">
-<p class="caption">Một ngày nắng đẹp trên hành trình.</p>
+
+<div class="year">2025</div>
+
+<div class="event">
+<a href="2025-trekking.html">
+<div class="event-title">Trekking Tà Năng</div>
+<div class="event-desc">Cung trekking nổi tiếng Tà Năng - Phan Dũng.</div>
+</a>
 </div>
 
-<div class="photo">
-<img src="images/Trek4.jpg" loading="lazy" onclick="openImg(this)">
-<p class="caption">Những bước chân không vội giữa thiên nhiên.</p>
-</div>
-
-<div class="photo">
-<img src="images/Trek5.jpg" loading="lazy" onclick="openImg(this)">
-<p class="caption">Một hành trình nhỏ nhưng đầy kỷ niệm.</p>
-</div>
-
-<div class="photo">
-<img src="images/Trek6.jpg" loading="lazy" onclick="openImg(this)">
-<p class="caption">Khoảnh khắc đáng nhớ trong chuyến đi.</p>
-</div>
-
-<div class="photo">
-<img src="images/Trek7.jpg" loading="lazy" onclick="openImg(this)">
-<p class="caption">Cả gia đình cùng nhau chinh phục con đường.</p>
-</div>
-
-<div class="photo">
-<img src="images/Trek8.jpg" loading="lazy" onclick="openImg(this)">
-<p class="caption">Một trong những hành trình đáng nhớ.</p>
+<div class="event">
+<a href="2025-camping.html">
+<div class="event-title">Camping Vĩnh Hảo</div>
+<div class="event-desc">Một chuyến cắm trại ngắn ngày cùng gia đình.</div>
+</a>
 </div>
 
 </div>
@@ -380,10 +298,7 @@ data-href="https://www.facebook.com/giadinhtonyvo"
 data-tabs="timeline"
 data-width="500"
 data-height="650"
-data-small-header="false"
-data-adapt-container-width="true"
-data-hide-cover="false"
-data-show-facepile="true">
+data-adapt-container-width="true">
 </div>
 
 </div>
@@ -403,47 +318,6 @@ data-show-facepile="true">
 © 2026 Gia Đình Tony
 
 </footer>
-
-
-<div class="lightbox" id="lightbox" onclick="closeImg()">
-<img id="lightbox-img">
-</div>
-
-
-<script>
-
-function openImg(img){
-document.getElementById("lightbox").style.display="flex";
-document.getElementById("lightbox-img").src=img.src;
-}
-
-function closeImg(){
-document.getElementById("lightbox").style.display="none";
-}
-
-/* fix ảnh không hiện khi cache */
-
-document.querySelectorAll("img").forEach(img=>{
-if(img.complete){
-img.classList.add("loaded");
-}else{
-img.onload=()=>img.classList.add("loaded");
-}
-});
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-});
-
-document.querySelectorAll(".section").forEach(sec=>{
-observer.observe(sec);
-});
-
-</script>
 
 </body>
 </html>
