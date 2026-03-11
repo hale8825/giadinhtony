@@ -238,42 +238,7 @@ mà là những chuyến đi đã cùng nhau trải qua."
 </div>
 
 
-<div class="timeline">
-
-<div class="year">2026</div>
-
-<div class="event">
-<a href="2026-k50.html">
-<div class="event-title">Trek K50</div>
-<div class="event-desc">Hành trình trekking thác K50 cùng Tony, Na và Lu.</div>
-</a>
-</div>
-
-<div class="event">
-<a href="2026-longson.html">
-<div class="event-title">Đạp xe Hồ Long Sơn</div>
-<div class="event-desc">Một ngày đạp xe quanh hồ và cắm trại.</div>
-</a>
-</div>
-
-
-<div class="year">2025</div>
-
-<div class="event">
-<a href="2025-trekking.html">
-<div class="event-title">Trekking Tà Năng</div>
-<div class="event-desc">Cung trekking nổi tiếng Tà Năng - Phan Dũng.</div>
-</a>
-</div>
-
-<div class="event">
-<a href="2025-camping.html">
-<div class="event-title">Camping Vĩnh Hảo</div>
-<div class="event-desc">Một chuyến cắm trại ngắn ngày cùng gia đình.</div>
-</a>
-</div>
-
-</div>
+<div class="timeline" id="timeline"></div>
 
 
 <div class="section">
@@ -318,6 +283,84 @@ data-adapt-container-width="true">
 © 2026 Gia Đình Tony
 
 </footer>
+
+
+<script>
+
+/* DANH SÁCH CHUYẾN ĐI */
+
+const trips=[
+
+{
+year:2026,
+title:"Trek K50",
+desc:"Hành trình trekking thác K50 cùng Tony, Na và Lu.",
+link:"2026-k50.html"
+},
+
+{
+year:2026,
+title:"Đạp xe Hồ Long Sơn",
+desc:"Một ngày đạp xe quanh hồ và cắm trại.",
+link:"2026-longson.html"
+},
+
+{
+year:2025,
+title:"Trekking Tà Năng",
+desc:"Cung trekking nổi tiếng Tà Năng - Phan Dũng.",
+link:"2025-trekking.html"
+},
+
+{
+year:2025,
+title:"Camping Vĩnh Hảo",
+desc:"Một chuyến cắm trại ngắn ngày cùng gia đình.",
+link:"2025-camping.html"
+}
+
+];
+
+
+/* TẠO TIMELINE TỰ ĐỘNG */
+
+const container=document.getElementById("timeline");
+
+let grouped={};
+
+trips.forEach(t=>{
+if(!grouped[t.year]) grouped[t.year]=[];
+grouped[t.year].push(t);
+});
+
+Object.keys(grouped)
+.sort((a,b)=>b-a)
+.forEach(year=>{
+
+let yearDiv=document.createElement("div");
+yearDiv.className="year";
+yearDiv.innerText=year;
+container.appendChild(yearDiv);
+
+grouped[year].forEach(trip=>{
+
+let event=document.createElement("div");
+event.className="event";
+
+event.innerHTML=`
+<a href="${trip.link}">
+<div class="event-title">${trip.title}</div>
+<div class="event-desc">${trip.desc}</div>
+</a>
+`;
+
+container.appendChild(event);
+
+});
+
+});
+
+</script>
 
 </body>
 </html>
