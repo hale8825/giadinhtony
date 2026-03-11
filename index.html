@@ -105,11 +105,13 @@ margin-top:30px;
 margin-bottom:10px;
 }
 
+/* EVENT CARD */
+
 .event{
 background:white;
-padding:14px 18px;
-border-radius:10px;
-margin-bottom:12px;
+padding:10px;
+border-radius:12px;
+margin-bottom:14px;
 box-shadow:0 3px 12px rgba(0,0,0,0.08);
 transition:0.25s;
 }
@@ -120,10 +122,24 @@ box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
 
 .event a{
+display:flex;
+gap:14px;
+align-items:center;
 text-decoration:none;
 color:#333;
-display:block;
 }
+
+/* THUMBNAIL */
+
+.event img{
+width:95px;
+height:70px;
+object-fit:cover;
+border-radius:8px;
+flex-shrink:0;
+}
+
+/* TEXT */
 
 .event-title{
 font-size:18px;
@@ -187,6 +203,11 @@ font-size:16px;
 
 .timeline{
 padding:20px;
+}
+
+.event img{
+width:80px;
+height:60px;
 }
 
 }
@@ -271,10 +292,10 @@ data-adapt-container-width="true">
 
 <div class="social">
 
-<a class="fb" href="https://facebook.com/giadinhtonyvo" target="_blank">Facebook</a>
-<a class="yt" href="https://youtube.com/@giadinhtonyvo" target="_blank">YouTube</a>
-<a class="tt" href="https://tiktok.com/@giadinhtonyofficial" target="_blank">TikTok</a>
-<a class="ig" href="https://instagram.com/giadinhtony" target="_blank">Instagram</a>
+<a class="fb" href="https://facebook.com/giadinhtonyvo" target="_blank" rel="noopener">Facebook</a>
+<a class="yt" href="https://youtube.com/@giadinhtonyvo" target="_blank" rel="noopener">YouTube</a>
+<a class="tt" href="https://tiktok.com/@giadinhtonyofficial" target="_blank" rel="noopener">TikTok</a>
+<a class="ig" href="https://instagram.com/giadinhtony" target="_blank" rel="noopener">Instagram</a>
 
 </div>
 
@@ -293,64 +314,72 @@ const trips=[
 
 {
 year:2026,
+title:"Trek Tà Năng – Phan Dũng",
+desc:"Hành trình trekking 28km trong ngày.",
+link:"TNPD-2026.html",
+img:"images/tnpd-cover.jpg"
+},
+
+{
+year:2026,
 title:"Trek K50",
 desc:"Hành trình trekking thác K50 cùng Tony, Na và Lu.",
-link:"2026-k50.html"
+link:"#",
+img:"images/k50-cover.jpg"
 },
 
 {
 year:2026,
 title:"Đạp xe Hồ Long Sơn",
 desc:"Một ngày đạp xe quanh hồ và cắm trại.",
-link:"2026-longson.html"
-},
-
-{
-year:2025,
-title:"Trekking Tà Năng",
-desc:"Cung trekking nổi tiếng Tà Năng - Phan Dũng.",
-link:"2025-trekking.html"
+link:"#",
+img:"images/longson-cover.jpg"
 },
 
 {
 year:2025,
 title:"Camping Vĩnh Hảo",
 desc:"Một chuyến cắm trại ngắn ngày cùng gia đình.",
-link:"2025-camping.html"
+link:"#",
+img:"images/camping-cover.jpg"
 }
 
 ];
 
 
-/* TẠO TIMELINE TỰ ĐỘNG */
+/* TẠO TIMELINE */
 
 const container=document.getElementById("timeline");
 
 let grouped={};
 
-trips.forEach(t=>{
-if(!grouped[t.year]) grouped[t.year]=[];
-grouped[t.year].push(t);
+trips.forEach(trip=>{
+if(!grouped[trip.year]) grouped[trip.year]=[];
+grouped[trip.year].push(trip);
 });
 
 Object.keys(grouped)
 .sort((a,b)=>b-a)
 .forEach(year=>{
 
-let yearDiv=document.createElement("div");
+const yearDiv=document.createElement("div");
 yearDiv.className="year";
-yearDiv.innerText=year;
+yearDiv.textContent=year;
+
 container.appendChild(yearDiv);
 
 grouped[year].forEach(trip=>{
 
-let event=document.createElement("div");
+const event=document.createElement("div");
 event.className="event";
 
 event.innerHTML=`
 <a href="${trip.link}">
+<img src="${trip.img}" loading="lazy" alt="${trip.title}">
+<div>
 <div class="event-title">${trip.title}</div>
 <div class="event-desc">${trip.desc}</div>
+</div>
 </a>
 `;
 
